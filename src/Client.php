@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClient;
+namespace OlxApiClient;
 
 class Olx_Auth_Exception extends \Exception
 {
@@ -103,7 +103,7 @@ class Client
         if (!isset($this->config->curlOpts)) {
             $this->config->curlOpts = array();
         }
-        $this->request = new \ApiClient\OlxHttpRequest($this->config->auth_url, $this->config->curlOpts);
+        $this->request = new \OlxApiClient\OlxHttpRequest($this->config->auth_url, $this->config->curlOpts);
     }
 
     /**

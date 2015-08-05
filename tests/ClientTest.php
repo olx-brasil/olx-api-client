@@ -1,6 +1,6 @@
 <?php
 
-use ApiClient\Client;
+use OlxApiClient\Client;
 use org\bovigo\vfs\vfsStream;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
@@ -59,27 +59,27 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     public function testSetConfigKeyInvalid()
     {
         $client = new Client();
-        $this->setExpectedException('\ApiClient\Olx_Auth_Exception', 'Chave fornecida [key_invalida] é inválida para o config');
+        $this->setExpectedException('\OlxApiClient\Olx_Auth_Exception', 'Chave fornecida [key_invalida] é inválida para o config');
         $client->setConfig('key_invalida', '123');
     }
 
     public function testSetConfigValueInvalidScope()
     {
         $client = new Client();
-        $this->setExpectedException('\ApiClient\Olx_Auth_Exception', 'Valor inválido (123) para Chave fornecida (scope)');
+        $this->setExpectedException('\OlxApiClient\Olx_Auth_Exception', 'Valor inválido (123) para Chave fornecida (scope)');
         $client->setConfig('scope', '123');
     }
 
     public function testSetConfigValueInvalid()
     {
         $client = new Client();
-        $reflectionClass = new ReflectionClass('\ApiClient\Client');
+        $reflectionClass = new ReflectionClass('\OlxApiClient\Client');
         $reflectionProperty = $reflectionClass->getProperty('struct_config');
         $reflectionProperty->setAccessible(true);
         $struct = $reflectionProperty->getValue($client);
         $struct['client_id'] = array('obrigatorio' => true, 'valores' => array('xpto'));
         $reflectionProperty->setValue($client, $struct);
-        $this->setExpectedException('\ApiClient\Olx_Auth_Exception', 'Valor inválido (x123) para Chave fornecida (client_id)');
+        $this->setExpectedException('\OlxApiClient\Olx_Auth_Exception', 'Valor inválido (x123) para Chave fornecida (client_id)');
         $client->setConfig('client_id', 'x123');
     }
 
@@ -105,7 +105,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         $url_ret = $url.'response_type=code'.'&client_id='.$client_id.'&scope='.$scope.'&redirect_uri='.$redirect_uri;
 
-        $this->setExpectedException('ApiClient\Olx_Auth_Exception', 'Valor obrigatório não preenchido no config [redirect_uri].');
+        $this->setExpectedException('OlxApiClient\Olx_Auth_Exception', 'Valor obrigatório não preenchido no config [redirect_uri].');
         $this->assertEquals($url_ret, $client->createAuthUrl());
     }
 
@@ -123,7 +123,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     public function testAuthenticateInvalidCode($client)
     {
         $this->setExpectedException(
-            '\ApiClient\Olx_Auth_Exception', 'Invalid code'
+            '\OlxApiClient\Olx_Auth_Exception', 'Invalid code'
         );
         $client->authenticate('');
     }
@@ -133,8 +133,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testAuthenticateResponseErrorCode($client)
     {
-        $reflectionClass = new ReflectionClass('\ApiClient\Client');
-        $this->setExpectedException('\ApiClient\Olx_Auth_Exception', 'Invalid code');
+        $reflectionClass = new ReflectionClass('\OlxApiClient\Client');
+        $this->setExpectedException('\OlxApiClient\Olx_Auth_Exception', 'Invalid code');
         $client->authenticate(str_repeat('a', 41));
     }
 
@@ -143,11 +143,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testAuthenticateResponseError($client)
     {
-        $reflectionClass = new ReflectionClass('\ApiClient\Client');
+        $reflectionClass = new ReflectionClass('\OlxApiClient\Client');
         $reflectionProperty = $reflectionClass->getProperty('request');
         $reflectionProperty->setAccessible(true);
 
-        $request = $this->getMock('\ApiClient\OlxHttpRequest', array('executeRequest'), array('www.teste.com.br'));
+        $request = $this->getMock('\OlxApiClient\OlxHttpRequest', array('executeRequest'), array('www.teste.com.br'));
         $request->expects($this->any())
             ->method('executeRequest')
             ->will($this->returnValue(array(
@@ -165,11 +165,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testAuthenticateResponseSuccess($client)
     {
-        $reflectionClass = new ReflectionClass('\ApiClient\Client');
+        $reflectionClass = new ReflectionClass('\OlxApiClient\Client');
         $reflectionProperty = $reflectionClass->getProperty('request');
         $reflectionProperty->setAccessible(true);
 
-        $request = $this->getMock('\ApiClient\OlxHttpRequest', array('executeRequest'), array('www.teste.com.br'));
+        $request = $this->getMock('\OlxApiClient\OlxHttpRequest', array('executeRequest'), array('www.teste.com.br'));
         $request->expects($this->any())
             ->method('executeRequest')
             ->will($this->returnValue(array(
@@ -188,7 +188,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidCode($client)
     {
-        $this->setExpectedException('\ApiClient\Olx_Auth_Exception', 'Invalid code');
+        $this->setExpectedException('\OlxApiClient\Olx_Auth_Exception', 'Invalid code');
         $client->authenticate(str_repeat('a', 41));
     }
 }

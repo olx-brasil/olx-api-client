@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiClient;
+namespace OlxApiClient;
 
 class OlxHttpRequest
 {

@@ -1,0 +1,7 @@
+vendor
+coverage
+build
+.metadata
+*.swp
+composer.phar
+composer.lock

@@ -11,6 +11,10 @@ aplicação no olx.com.br, depois a aplicação solicita uma chave de acesso ao
 servidor de autenticação do olx.com.br e então utiliza essa chave para receber
 as informações de um recurso da API olx.com.br que deseja acessar.
 
+## Primeiro passo
+
+Quer integrar com a OLX? Envie um e-mail para integracao@olxbr.com
+
 ## Criando uma aplicação
 Antes de iniciar o protocolo de autenticação com o servidor olx.com.br, o
 cliente deverá registrar sua aplicação, fornecendo os seguintes dados:

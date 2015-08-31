@@ -35,7 +35,7 @@ iniciar a sequência de autorização.
 
 ## Instalação via composer
 
-    $ composer require olx/olx-api-lient
+    $ composer require olxbr/olx-api-client
 
 ## Instalação manual
 

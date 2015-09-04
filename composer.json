@@ -1,7 +1,14 @@
 {
     "name": "olxbr/olx-api-client",
     "description": "Client library for Olx API using OAuth2",
+    "keywords": ["olx","bomnegocio","api","oauth"],
     "License": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/olxbr/olx-api-client/graphs/contributors"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "OlxApiClient\\": "src"

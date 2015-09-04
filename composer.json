@@ -2,7 +2,7 @@
     "name": "olxbr/olx-api-client",
     "description": "Client library for Olx API using OAuth2",
     "keywords": ["olx","bomnegocio","api","oauth"],
-    "License": "Apache-2.0",
+    "License": "MIT",
     "authors": [
         {
             "name": "Contributors",

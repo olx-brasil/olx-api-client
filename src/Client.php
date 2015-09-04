@@ -98,7 +98,7 @@ class Client
         }
         $this->config->response_type = 'code';
         if (!isset($this->config->auth_url)) {
-            $this->config->auth_url = 'https://auth.olx.com.br/oauth/token';
+            $this->config->auth_url = 'https://auth.olx.com.br/oauth';
         }
         if (!isset($this->config->curlOpts)) {
             $this->config->curlOpts = array();

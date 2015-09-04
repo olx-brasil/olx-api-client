@@ -114,7 +114,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateAuthUrl($client)
     {
-        $this->assertEquals('https://auth.olx.com.br/oauth/token/?client_id=efbd522be22d67e1ec7224283dcd5dbad9d594d9&scope=basic_user_info&redirect_uri=http%3A%2F%2Fwww.vitormattos.com.br%2Freturn_page.php&response_type=code', $client->createAuthUrl());
+        $this->assertEquals('https://auth.olx.com.br/oauth/?client_id=efbd522be22d67e1ec7224283dcd5dbad9d594d9&scope=basic_user_info&redirect_uri=http%3A%2F%2Fwww.vitormattos.com.br%2Freturn_page.php&response_type=code', $client->createAuthUrl());
     }
 
     /**

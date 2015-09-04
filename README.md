@@ -72,7 +72,7 @@ caminho correto para o arquivo json ao instanciar a classe client.
 ### index.php
 ```php
 <?php
-use ApiClient\Client;
+use OlxApiClient\Client;
 require 'vendor/autoload.php';
 session_start();
 
@@ -100,7 +100,7 @@ na URI de redirecionamento:
 ### return_page.php
 ```php
 <?php
-use ApiClient\Client;
+use OlxApiClient\Client;
 require 'vendor/autoload.php';
 session_start();
 

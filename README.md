@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/olxbr/api-client.svg?branch=master)](https://travis-ci.org/olxbr/api-client)
-[![Coverage Status](https://coveralls.io/repos/olxbr/api-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/olxbr/api-client?branch=master)
+[![Coverage Status](https://coveralls.io/repos/olxbr/api-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/olxbr/olx-api-client?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/olxbr/olx-api-client/v/stable)](https://packagist.org/packages/olxbr/olx-api-client)
 [![License](https://poser.pugx.org/olxbr/olx-api-client/license)](https://packagist.org/packages/olxbr/olx-api-client)
 

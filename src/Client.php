@@ -34,6 +34,9 @@ class Client
         'client_secret' => array(
             'obrigatorio' => false
         ),
+        'apps_url' => array(
+            'obrigatorio' => false
+        ),
         'auth_url' => array(
             'obrigatorio' => false
         ),
@@ -99,6 +102,9 @@ class Client
         $this->config->response_type = 'code';
         if (!isset($this->config->auth_url)) {
             $this->config->auth_url = 'https://auth.olx.com.br/oauth';
+        }
+        if (!isset($this->config->apps_url)) {
+            $this->config->apps_url = 'https://apps.olx.com.br/oauth';
         }
         if (!isset($this->config->curlOpts)) {
             $this->config->curlOpts = array();
@@ -225,7 +231,7 @@ class Client
     {
         $this->request->method = $method;
         $this->request->postBody = $arguments;
-        $this->request->url = $this->config->auth_url.'_api/'.$name;
+        $this->request->url = $this->config->apps_url.'_api/'.$name;
 
         return $this->request->executeRequest();
     }

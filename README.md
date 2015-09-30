@@ -86,7 +86,7 @@ if (isset($_SESSION['olx_access_token'])) {
     echo '<h1>Dados do Usuario</h1>';
     var_dump(json_decode($dadosUsuario['body']));
 } else {
-    echo '<a href = '.$client->createAuthUrl().'>Autentica</a>';
+    echo '<a href="'.$client->createAuthUrl().'">Autentica</a>';
 }
 ```
 
